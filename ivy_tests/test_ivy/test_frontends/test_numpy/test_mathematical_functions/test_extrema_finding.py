@@ -159,8 +159,9 @@ def test_numpy_nanmin(
         frontend="numpy",
         fn_tree="nanmin",
         a=x[0],
+        out=None,
         axis=axis,
-        where=where,
         keepdims=keepdims,
         initial=initial,
+        where=where,
     )
