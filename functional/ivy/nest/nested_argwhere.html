@@ -163,7 +163,7 @@ where the method evaluates as True.</p>
 <li><p><strong>nest</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>) – The nest to check the leaves of.</p></li>
 <li><p><strong>fn</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>) – The conditon function, returning True or False.</p></li>
 <li><p><strong>check_nests</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to also check the nests for the condition, not only nest leaves. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
-Default is False.</p></li>
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 <li><p><strong>to_ignore</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>]]]) – Types to ignore when deciding whether to go deeper into the nest or not (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 <li><p><strong>_index</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]) – The indices detected so far. None at the beginning. Used internally, do not set (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 manually.</p></li>
@@ -216,38 +216,6 @@ stack. Used internally, do not set manually.</p></li>
 </div>
 </dd></dl>
 
-<table class="colwidths-given docutils align-default" id="id1">
-<caption><span class="caption-text">Device Support</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Device</p></th>
-<th class="head"><p>JAX</p></th>
-<th class="head"><p>NumPy</p></th>
-<th class="head"><p>TensorFlow</p></th>
-<th class="head"><p>PyTorch</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>CPU</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-<td><p>✅</p></td>
-</tr>
-<tr class="row-odd"><td><p>GPU</p></td>
-<td><p>❌</p></td>
-<td><p>❌</p></td>
-<td><p>❌</p></td>
-<td><p>❌</p></td>
-</tr>
-</tbody>
-</table>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><strong>Supported Frameworks:</strong></div>
