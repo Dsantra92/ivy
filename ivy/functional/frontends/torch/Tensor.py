@@ -127,6 +127,10 @@ class Tensor:
     def acos(self, *, out=None):
         return torch_frontend.acos(self.data, out=out)
 
+    def count_nonzero(self, dim=None):
+        z_array = torch_frontend.zeros_like(self.data)
+        return torch_frontend.sum(self.data == z_array, dim=dim)
+
     def new_tensor(
         self,
         data,

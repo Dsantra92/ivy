@@ -1043,6 +1043,41 @@ def test_torch_special_truediv(
     )
 
 
+# count_nonzero
+@handle_cmd_line_args
+@given(
+    dtype_x_ax=helpers.dtype_values_axis(
+        available_dtypes=helpers.get_dtypes("valid", full=True),
+        valid_axis=True
+    ),
+)
+def test_torch_instance_count_nonzero(
+    dtype_x_ax,
+    as_variable,
+    native_array,
+):
+    input_dtype, x, axis = dtype_x_ax
+    helpers.test_frontend_method(
+        input_dtypes_init=input_dtype,
+        as_variable_flags_init=as_variable,
+        num_positional_args_init=1,
+        native_array_flags_init=native_array,
+        all_as_kwargs_np_init={
+            "data": x[0],
+        },
+        input_dtypes_method=input_dtype,
+        as_variable_flags_method=as_variable,
+        num_positional_args_method=0,
+        native_array_flags_method=native_array,
+        all_as_kwargs_np_method={
+            "dim": axis
+        },
+        frontend="torch",
+        class_name="tensor",
+        method_name="count_nonzero",
+    )
+
+
 # to_with_device
 @handle_cmd_line_args
 @given(
