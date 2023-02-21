@@ -18,6 +18,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../extensions.html">Extensions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../contributing.html">Contributing</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Setting Up</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#clone-ivy">Clone Ivy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forking-and-cloning-the-repo">Forking and cloning the repo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pycharm">PyCharm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#virtual-environments-no-docker">Virtual environments - No Docker</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#using-miniconda">Using miniconda</a></li>
@@ -63,8 +64,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#more-detailed-hypothesis-logs">More Detailed Hypothesis Logs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-for-free">Setting up for Free</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#github-codespaces">GitHub Codespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-for-free">Setting up for Free</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#github-codespaces">GitHub Codespaces</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-commit">Pre-Commit</a></li>
 </ul>
 </li>
@@ -82,14 +87,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../functional/extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../functional/ivy/compilation.html">Compilation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional/ivy/control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/device.html">Device</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional/ivy/experimental.html">Experimental</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/general.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/gradients.html">Gradients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functional/ivy/layers.html">Layers</a></li>
@@ -113,14 +119,38 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/helpers.html">Helpers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/module.html">Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stateful/optimizers.html">Optimizers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Nested array</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nested_array/nested_array.html">Nested array</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../utils/backend.html">Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/assertions.html">Assertions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/dynamic_import.html">Dynamic import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/inspection.html">Inspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/verbosity.html">Verbosity</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Testing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../testing/assertions.html">Assertions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/available_frameworks.html">Available frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/function_testing.html">Function testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/globals.html">Globals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/hypothesis_helpers.html">Hypothesis helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/test_parameter_flags.html">Test parameter flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/testing_helpers.html">Testing helpers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -164,17 +194,24 @@
 <h1>Setting Up<a class="headerlink" href="#setting-up" title="Permalink to this heading"></a></h1>
 <p>We’re really happy you’d like to learn how to contribute towards Ivy 🙂</p>
 <p>This page explains the main steps to get started!</p>
-<section id="clone-ivy">
-<h2>Clone Ivy<a class="headerlink" href="#clone-ivy" title="Permalink to this heading"></a></h2>
-<p>The first step is simple, clone Ivy!</p>
+<section id="forking-and-cloning-the-repo">
+<h2>Forking and cloning the repo<a class="headerlink" href="#forking-and-cloning-the-repo" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>You first need to fork the Ivy repository from the repository page here <a class="reference external" href="https://github.com/unifyai/ivy">repo</a> by using the fork button on the top right. This creates a copy of Ivy repository in your GitHub account.</p></li>
+<li><p>Clone your forked repo to your local machine.</p></li>
+</ol>
 <p>Depending on your preferred mode of cloning, any of the below should work:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules git@github.com:unifyai/ivy.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules git@github.com:YOUR_USERNAME/ivy.git
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/unifyai/ivy.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/YOUR_USERNAME/ivy.git
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gh repo clone --recurse-submodules unifyai/ivy your_folder
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gh repo clone YOUR_USERNAME/ivy your_folder -- --recurse-submodules
+</pre></div>
+</div>
+<p>Then add Ivy original repository as upstream, to easily sync with latest changes.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git remote add upstream https://github.com/unifyai/ivy.git
 </pre></div>
 </div>
 </section>
@@ -334,7 +371,7 @@ If Docker’s latest version causes error, try using an earlier version by visit
 For some Windows users, it might be necessary to enable virtualisation from the BIOS setup.</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/7I_46c2AvJg" class="video">
+src="https://www.youtube.com/embed/7I_46c2AvJg" class="video" allowfullscreen="true">
 </iframe></section>
 <section id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading"></a></h3>
@@ -354,16 +391,21 @@ Add the remote python interpreter by:</p>
 Click the “+” on top left and it should add a docker connection.</p></li>
 <li><p>Going to settings -&gt; project -&gt; Python Interpreter</p></li>
 <li><p>Clicking add interpreter (currently by clicking the ⚙ icon by the right side) which should open a new window.</p></li>
-<li><p>Choosing “Docker” from the left panel.
-Type python3 (with the number) in python interpreter path and press ok.</p></li>
+<li><p>Choosing “On Docker” from the dropdown menu.</p></li>
+<li><p>Choosing “Docker” from the “Docker server” dropdown menu, choosing “Pull” if you want to use a remote interpreter, and using <code class="code docutils literal notranslate"><span class="pre">unifyai/ivy:latest</span></code> as the image tag.</p></li>
+<li><p>If you don’t want to use a remote interpreter, choose “Build” and use the suitable Dockerfile; then choosing <code class="code docutils literal notranslate"><span class="pre">docker/Dockerfile</span></code> to be the Dockerfile.</p></li>
+<li><p>Clicking next and navigating to system interpreter tab from the menu on the left.</p></li>
+<li><p>Choosing the built interpreter from the dropdown menu.</p></li>
 </ol>
 </li>
 </ol>
 <p>Once these steps are finished, your interpreter should be set up correctly!
 If Docker’s latest version causes error, try using an earlier version by visiting <a class="reference external" href="https://docs.docker.com/desktop/release-notes/">Docker release note</a>.</p>
+<p><strong>Important Note</strong></p>
+<p>When setting up on an M1 Mac, you would have to update the Dockerfile to install libraries from <code class="code docutils literal notranslate"><span class="pre">requirements/optional_m1_1.txt</span></code> and <code class="code docutils literal notranslate"><span class="pre">requirements/optional_m1_2.txt</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">requirements/optional.txt</span></code>.</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/5BxizBIC-GQ" class="video">
+src="https://www.youtube.com/embed/5BxizBIC-GQ" class="video" allowfullscreen="true">
 </iframe></section>
 <section id="ubuntu">
 <h3>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this heading"></a></h3>
@@ -424,7 +466,7 @@ Type python3 (with the number) in python interpreter path and press ok.</p></li>
 <p>For questions, please reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/942114744691740772">docker channel</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/UHeSnZu0pAI" class="video">
+src="https://www.youtube.com/embed/UHeSnZu0pAI" class="video" allowfullscreen="true">
 </iframe></section>
 <section id="setting-up-testing">
 <h3>Setting Up Testing<a class="headerlink" href="#setting-up-testing" title="Permalink to this heading"></a></h3>
@@ -491,8 +533,10 @@ To get more detailed information on errors in the code, we recommend doing the f
 </ol>
 <p>Now, if Hypothesis detects an error in the code it will return more detailed information on each of the failing examples:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/setting_up/more_detailed_hypothesis_logs/detailed_hypothesis_example.png?raw=true"><img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/setting_up/more_detailed_hypothesis_logs/detailed_hypothesis_example.png?raw=true" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/setting_up/more_detailed_hypothesis_logs/detailed_hypothesis_example.png?raw=true" style="width: 420px;" /></a>
-<p>For questions, please reach out on the <a href="#id7"><span class="problematic" id="id8">`setting up discussion`_</span></a>
+<p>For questions, please reach out on the <a href="#id10"><span class="problematic" id="id11">`setting up discussion`_</span></a>
 or on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/942114744691740772">docker channel</a>!</p>
+<p><strong>“Empty Suite” error fix:</strong></p>
+<p>Click on the “green arrow button” from where you run the funcion in PyCharm. Open “Modify Run Configuration…”, under “Target:” on the right side click on “…” it’ll open a new window, manually add the path to the specific function, For instance, for stateful -&gt; “test_stateful.test_submodule_name.test_function_name” and for functional -&gt; “test_submodule_name.test_function_name”, the function will pop up below, select that, click on “Apply” then “OK”. Now, do not run the test from the “green arrow button” in the left panel, run it from above where there is a “green arrow button” on the left side of the “debugger button” making sure you’ve selected the latest modified configuration of that specific test you want to run.</p>
 </section>
 </section>
 <section id="setting-up-for-free">
@@ -501,6 +545,8 @@ or on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord
 The most easiest and the most efficient way would be using Visual Studio Code with the Docker extension.
 You’ll hopefully be done with this in no time.
 The steps to be followed are listed below:</p>
+<section id="id6">
+<h3>Windows<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Install <a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a></p></li>
 <li><p>Install <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code here</a></p></li>
@@ -513,7 +559,26 @@ In case the window doesn’t pop up, search for the “Dev Containers” extensi
 <li><p>Install the “Docker” extension for Visual Studio Code, you’ll easily find that searching “docker” in the extensions tab.</p></li>
 <li><p>Once done, restart Visual Studio Code, at the bottom left corner there would be an icon similar to ” &gt;&lt; ” overlapped on each other.</p></li>
 <li><p>Clicking on that will open a bar at the top which will give you an option “Open Folder in Container…”, click on that.</p></li>
-<li><p>You’ll be inside the container now, where you can locally run the tests that you’ve modified by running the command, “pytest test_file_path::test_fn_name”</p></li>
+<li><p>You’ll be inside the container now, where you can locally run the tests that you’ve modified by running the command, “pytest test_file_path::test_fn_name”. Opening the container may take a long time, as the Docker image is very large (5+ GB).</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="id8">
+<h3>Ubuntu<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></p></li>
+<li><p>Install <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a></p></li>
+<li><p>Clone your fork of the Ivy repository.</p></li>
+<li><p>Open Visual Studio Code, open the Ivy repo folder and following the steps listed below:</p>
+<ol class="loweralpha simple">
+<li><p>Install the <code class="code docutils literal notranslate"><span class="pre">Dev</span> <span class="pre">Containers</span></code> and <code class="code docutils literal notranslate"><span class="pre">Docker</span></code> extensions.</p></li>
+<li><p>Open the <code class="code docutils literal notranslate"><span class="pre">.devcontainer/devcontainer.json</span></code> file.</p></li>
+<li><p>Add a comma (<code class="code docutils literal notranslate"><span class="pre">,</span></code>) to the end entry <code class="code docutils literal notranslate"><span class="pre">&quot;postCreateCommand&quot;:</span> <span class="pre">&quot;bash</span> <span class="pre">.devcontainer/post_create_commands.sh&quot;</span></code>, making it <code class="code docutils literal notranslate"><span class="pre">&quot;postCreateCommand&quot;:</span> <span class="pre">&quot;bash</span> <span class="pre">.devcontainer/post_create_commands.sh&quot;,</span></code>.</p></li>
+<li><p>Add in the line <code class="code docutils literal notranslate"><span class="pre">&quot;postStartCommand&quot;:</span> <span class="pre">&quot;git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">--add</span> <span class="pre">safe.directory</span> <span class="pre">${containerWorkspaceFolder}&quot;</span></code> on the line immediately after the <code class="code docutils literal notranslate"><span class="pre">postCreateCommand</span></code> line.</p></li>
+<li><p>Click the remote explorer icon in the bottom left. It looks roughly like “&gt;&lt;” overlapped on each other.</p></li>
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Reopen</span> <span class="pre">in</span> <span class="pre">Container</span></code> in the dropdown menu.</p></li>
+<li><p>You’ll be inside the container now, where you can locally run the tests running the command, <code class="code docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">test_fle_path::test_fn_name</span></code>. Opening the container may take a long time, as the Docker image is very large (5+ GB).</p></li>
 </ol>
 </li>
 </ol>
@@ -521,7 +586,7 @@ In case the window doesn’t pop up, search for the “Dev Containers” extensi
 <p>For windows users, the file path should be entered with “/” (forward-slashes), for other OS it would be the regular “\” (back-slashes).</p>
 </section>
 <section id="github-codespaces">
-<h2>GitHub Codespaces<a class="headerlink" href="#github-codespaces" title="Permalink to this heading"></a></h2>
+<h3>GitHub Codespaces<a class="headerlink" href="#github-codespaces" title="Permalink to this heading"></a></h3>
 <p>It can be headache to install Docker and setup the PyCharm development environment, especially on recent ARM architectures like the new M1 Macs.
 Instead, we could make use of the GitHub Codespaces feature provided; this feature creates a VM (Virtual Machine) on the Azure cloud (means no local computation) with same configuration as defined by <code class="code docutils literal notranslate"><span class="pre">ivy/Dockerfile</span></code>.
 Since it’s a VM, we no longer have to worry about installing the right packages, modules etc., making it platform agnostic (just like ivy :P).
@@ -530,7 +595,7 @@ With all the computations being done on cloud, we could contribute to Ivy using 
 How cool is that ?!</p>
 <p><strong>Important Note</strong></p>
 <p>There are several versions of GitHub.
-If you are using the free one you will not have access to GitHub Codespaces, to use Codespaces you have to have access to one of the paid versions which GitHub offers.</p>
+If you are using the free one you will have <em>limited</em> access to GitHub Codespaces, you can read the exact quotas available <a class="reference external" href="https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces#monthly-included-storage-and-core-hours-for-personal-accounts">here</a>.</p>
 <p><strong>Pre-requisites</strong></p>
 <ol class="arabic simple">
 <li><p>Before we setup GitHub Codespaces, we need to have Visual Studio Code installed (you can get it from <a class="reference external" href="https://code.visualstudio.com/">here</a>).</p></li>
@@ -592,16 +657,15 @@ From there, select <code class="code docutils literal notranslate"><span class="
 <li><p>Configure the _array_module.py file in the array_api_tests to be set to one of the supported frameworks.</p></li>
 </ol>
 <a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/setting_up/vs_code_testing_setup/vs_testing_03.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/setting_up/vs_code_testing_setup/vs_testing_03.png?raw=true" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/setting_up/vs_code_testing_setup/vs_testing_03.png?raw=true" style="width: 420px;" /></a>
-<p>4. As of 01/08/2022, the conftest.py file in the array_api_tests folder must also be commented out in order to run ivy_tests in the test suite.
-This will cause the array_api_tests to fail and therefore they must be run via the terminal.</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/setting_up/vs_code_testing_setup/vs_testing_04.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/setting_up/vs_code_testing_setup/vs_testing_04.png?raw=true" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/setting_up/vs_code_testing_setup/vs_testing_04.png?raw=true" style="width: 420px;" /></a>
-<ol class="arabic simple" start="5">
+<ol class="arabic simple" start="4">
 <li><p>Following all of this you should refresh the test suite and you should now be able to run tests right from VS Code!</p></li>
 </ol>
+<p>Note: Currently you do not need to comment out the <code class="code docutils literal notranslate"><span class="pre">conftest.py</span></code> file in the <code class="code docutils literal notranslate"><span class="pre">array_api_tests</span></code> directory.</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
-src="https://www.youtube.com/embed/8rDcMMIl8dM" class="video">
+src="https://www.youtube.com/embed/8rDcMMIl8dM" class="video" allowfullscreen="true">
 </iframe></section>
+</section>
 <section id="pre-commit">
 <h2>Pre-Commit<a class="headerlink" href="#pre-commit" title="Permalink to this heading"></a></h2>
 <p>In addition to the docker interpreter, our development team also make use of the <code class="code docutils literal notranslate"><span class="pre">pre-commit</span></code> PyPI <a class="reference external" href="https://pypi.org/project/pre-commit/">package</a>.</p>
@@ -635,7 +699,7 @@ To proceed with the commit, the modified files must be re-added using git, and t
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Ivy Team.</p>
+    <p>&#169; Copyright 2020-2023, Ivy Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
