@@ -272,9 +272,6 @@ document.write(`
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
   aria-label="Section Navigation">
-    <p class="bd-links__title" role="heading" aria-level="1">
-        Section Navigation
-    </p>
     <div class="bd-toc-item navbar-nav">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="nav bd-sidenav">
@@ -2338,8 +2335,6 @@ document.write(`
 
     <span class="k">def</span> <span class="nf">map_fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">_is_frontend_array</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">ivy_array</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">frontends</span><span class="o">.</span><span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">ivy_array</span>
         <span class="k">elif</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_native_array</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_ivy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
