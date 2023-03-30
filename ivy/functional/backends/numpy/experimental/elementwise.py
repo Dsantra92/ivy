@@ -197,7 +197,7 @@ def nansum(
 ) -> np.ndarray:
     if isinstance(axis, list):
         axis = tuple(axis)
-    return np.nansum(x, axis=axis, dtype=dtype, keepdims=keepdims, out=out)
+    return np.array(np.nansum(x, axis=axis, dtype=dtype, keepdims=keepdims, out=out))
 
 
 nansum.support_native_out = True

@@ -83,7 +83,10 @@ def nansum(
         s[axis] = 1
         header = ivy.full(ivy.Shape(tuple(s)), initial)
         a = ivy.concat([header, a], axis=axis)
-    return ivy.sum(a, axis=axis, dtype=dtype, keepdims=keepdims, out=out)
+    res = ivy.sum(a, axis=axis, dtype=dtype, keepdims=keepdims, out=out)
+    if not keepdims:
+        return res[()]
+    return res
 
 
 @handle_numpy_out
