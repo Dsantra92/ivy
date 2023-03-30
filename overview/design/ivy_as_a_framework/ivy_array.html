@@ -30,6 +30,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -37,13 +38,12 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/design/ivy_as_a_framework/ivy_array';</script>
-    <link rel="shortcut icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Related Work" href="../../related_work.html" />
@@ -625,7 +625,7 @@ then the <code class="xref py py-meth docutils literal notranslate"><span class=
 </pre></div>
 </div>
 <p>We can implement inplace updates in the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class without requiring inplace updates in the backend array classes.
-If the backend does not support inplace updates, then we can use the <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.scatter_nd()</span></code> method to return a new array and store this in the <code class="code docutils literal notranslate"><span class="pre">self._data</span></code> attribute.</p>
+If the backend does not support inplace updates, then we can use the <a class="reference internal" href="../../../docs/functional/ivy/general/ivy.functional.ivy.general.scatter_nd.html#ivy.scatter_nd" title="ivy.scatter_nd"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.scatter_nd()</span></code></a> method to return a new array and store this in the <code class="code docutils literal notranslate"><span class="pre">self._data</span></code> attribute.</p>
 <p>Now, with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances, our code will run without error, regardless of which backend is selected.
 We can genuinely say our code is fully framework-agnostic.</p>
 <p>The same logic applies to all python operators.
@@ -741,23 +741,6 @@ Some examples are given below.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item"><nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Design</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../building_blocks.html">Building Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ivy_as_a_transpiler.html">Ivy as a Transpiler</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../ivy_as_a_framework.html">Ivy as a Framework</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="ivy_container.html">Ivy Container</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ivy_stateful_api.html">Ivy Stateful API</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ivy Array</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</nav></div>
-
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
@@ -803,7 +786,7 @@ Some examples are given below.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
     <br/>
   </p>
 </div>
