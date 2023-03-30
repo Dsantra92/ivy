@@ -186,6 +186,7 @@ def count_nonzero(
 count_nonzero.support_native_out = False
 
 
+@_scalar_output_to_0d_array
 def nansum(
     x: np.ndarray,
     /,
@@ -203,6 +204,7 @@ def nansum(
 nansum.support_native_out = True
 
 
+@_scalar_output_to_0d_array
 def gcd(
     x1: Union[np.ndarray, int, list, tuple],
     x2: Union[np.ndarray, float, list, tuple],

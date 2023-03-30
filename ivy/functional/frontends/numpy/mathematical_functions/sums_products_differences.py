@@ -80,8 +80,11 @@ def nansum(
         a = ivy.where(where, a, ivy.default(out, fill_values), out=out)
     if initial is not None:
         s = ivy.shape(a, as_array=True)
-        s[axis] = 1
-        header = ivy.full(ivy.Shape(tuple(s)), initial)
+        if axis is None:
+            s[:] = 1
+        else:
+            s[axis] = 1
+        header = ivy.full(ivy.Shape(tuple(s._data)), initial)
         a = ivy.concat([header, a], axis=axis)
     return ivy.sum(a, axis=axis, dtype=dtype, keepdims=keepdims, out=out)
 
